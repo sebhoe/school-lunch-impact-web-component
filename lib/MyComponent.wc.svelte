@@ -196,12 +196,12 @@
         </p>
       </div>
       <div class="logo">
-        <img src="/img/proveg-logo.svg" alt="proveg logo" />
+        <img src="proveg-logo.svg" alt="proveg logo" />
       </div>
     </div>
     <div class="banner">
       <div class="icon">
-        <img src="/img/icons/carbon.png" alt="carbon icon" />
+        <img src="carbon.png" alt="carbon icon" />
       </div>
       <div>
         <p>
@@ -221,13 +221,13 @@
         </p>
       </div>
       <div class="logo">
-        <img src="/img/proveg-logo.svg" alt="proveg logo" />
+        <img src="proveg-logo.svg" alt="proveg logo" />
       </div>
       <div class="link">berechnet auf proveg.com/de/impact-rechner</div>
     </div>
     <div class="banner">
       <div class="icon">
-        <img src="/img/icons/waterdrop.png" alt="waterdrop icon" />
+        <img src="waterdrop.png" alt="waterdrop icon" />
       </div>
       <div>
         <p>
@@ -245,13 +245,13 @@
         </p>
       </div>
       <div class="logo">
-        <img src="/img/proveg-logo.svg" alt="proveg logo" />
+        <img src="proveg-logo.svg" alt="proveg logo" />
       </div>
       <div class="link">berechnet auf proveg.com/de/impact-rechner</div>
     </div>
     <div class="banner">
       <div class="icon">
-        <img src="/img/icons/forrest.png" alt="forrest icon" />
+        <img src="forrest.png" alt="forrest icon" />
       </div>
       <div>
         <p>
@@ -271,7 +271,7 @@
         </p>
       </div>
       <div class="logo">
-        <img src="/img/proveg-logo.svg" alt="proveg logo" />
+        <img src="proveg-logo.svg" alt="proveg logo" />
       </div>
       <div class="link">berechnet auf proveg.com/de/impact-rechner</div>
     </div>
