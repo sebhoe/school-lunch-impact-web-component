@@ -17,7 +17,7 @@
 
   let menuLines = 2,
     minMenuLines = 1,
-    maxMenuLines = 7,
+    maxMenuLines = 5,
     meatToPlant = 1,
     meatToVeg = 1,
     vegToPlant = 1,
@@ -101,7 +101,11 @@
       </h2>
       <div class="flex-wrapper flex-wrapper--space-around">
         <div class="flex-wrapper flex-wrapper--col">
-          <p class="large-icons">🍖 🔜 🧀</p>
+          <p class="large-icons">
+            <img src="./img/icons/meat.png" alt="meat icon" />
+            <img src="./img/icons/arrow.png" alt="arrow icon" />
+            <img src="./img/icons/plant.png" alt="plantbased icon" />
+          </p>
           <label class="inline">
             <input
               name="KCAL_meat_to_plant"
@@ -116,7 +120,11 @@
         </div>
 
         <div class="flex-wrapper flex-wrapper--col">
-          <p class="large-icons">🍖 🔜 🌱</p>
+          <p class="large-icons">
+            <img src="./img/icons/meat.png" alt="meat icon" />
+            <img src="./img/icons/arrow.png" alt="arrow icon" />
+            <img src="./img/icons/veg.png" alt="vegan icon" />
+          </p>
           <label class="inline">
             <input
               name="KCAL_meat_to_veg"
@@ -131,7 +139,11 @@
         </div>
 
         <div class="flex-wrapper flex-wrapper--col">
-          <p class="large-icons">🧀 🔜 🌱</p>
+          <p class="large-icons">
+            <img src="./img/icons/plant.png" alt="plantbased icon" />
+            <img src="./img/icons/arrow.png" alt="arrow icon" />
+            <img src="./img/icons/veg.png" alt="vegan icon" />
+          </p>
           <label class="inline">
             <input
               name="KCAL_veg_to_plant"
@@ -163,14 +175,6 @@
           Portionen
         </label>
       </p>
-
-      <!-- <p>
-				(( {meatToPlant} + {meatToVeg} + {vegToPlant}
-				) * {dishesPerDay} / {menuLines} ) * {daysPerYear}
-				= {(((meatToPlant + meatToVeg + vegToPlant) * dishesPerDay) /
-					menuLines) *
-					daysPerYear}
-			</p> -->
     </li>
   </ol>
 
@@ -187,93 +191,95 @@
 
   <section>
     <div class="banner">
-      <div>
-        <p>
-          <strong class="text text--large">Wir sparen pro Jahr</strong>
-          <br />
-          durch die Reduktion von tierischen Lebensmitteln in der Schulverpflegung
-          bis zu...
-        </p>
+      <div class="text-box text-box--first">
+        <span class="text text--big text--bold text--uppercase"
+          >Wir sparen pro Jahr</span
+        >
+        <br />
+        <span class="text text--small">
+          durch die Reduktion von tierischen Lebensmitteln in der
+          Schulverpflegung bis zu...
+        </span>
       </div>
       <div class="logo">
         <img src="./img/proveg-logo.svg" alt="proveg logo" />
       </div>
+      <div class="dotted-border" />
     </div>
     <div class="banner">
-      <div class="icon">
+      <div class="icon icon--right">
         <img src="./img/icons/carbon.png" alt="carbon icon" />
       </div>
-      <div>
-        <p>
-          <strong class="text text--orange text--large">
-            {sumCarbon.toLocaleString(undefined, {
-              maximumFractionDigits: 3,
-            })}
-          </strong>
-          <span class="text text--orange">
-            Tonnen CO<sub>2</sub>-Equivalente,
-          </span>
-          <br />das entspricht
-          <strong class="text text--orange text--large">
-            {(sumCarbon / CARBON_PER_KM).toLocaleString()}
-          </strong>
-          <span class="text text--orange">km mit dem Auto</span>
-        </p>
+      <div class="text-box">
+        <span class="text text--bold text--orange">
+          {sumCarbon.toLocaleString(undefined, {
+            maximumFractionDigits: 1,
+          })}
+          Tonnen
+        </span>
+        <span class="text">
+          CO<sub>2</sub>-Equivalente,
+        </span>
+        <br />
+        <span class="text"> das entspricht </span>
+        <span class="text text--bold text--orange">
+          {(sumCarbon / CARBON_PER_KM).toLocaleString()}
+          km
+        </span>
+        <span class="text"> mit dem Auto</span>
       </div>
-      <div class="logo">
-        <img src="./img/proveg-logo.svg" alt="proveg logo" />
-      </div>
-      <div class="link">berechnet auf proveg.com/de/impact-rechner</div>
+      <div class="dotted-border" />
     </div>
     <div class="banner">
       <div class="icon">
         <img src="./img/icons/waterdrop.png" alt="waterdrop icon" />
       </div>
-      <div>
-        <p>
-          <strong class="text text--blue text--large">
-            {sumWater.toLocaleString()}
-          </strong>
-          <span class="text text--blue">Liter Wasser,</span>
-          <br />das entspricht
-          <strong class="text text--blue text--large">
-            {(sumWater / LITER_PER_BATHTUB).toLocaleString(undefined, {
-              maximumFractionDigits: 0,
-            })}
-          </strong>
-          <span class="text text--blue">Badewannen</span>
-        </p>
+      <div class="text-box">
+        <span class="text text--bold text--blue">
+          {sumWater.toLocaleString()}
+          Liter
+        </span>
+        <span class="text"> Wasser,</span>
+        <br />
+        <span class="text"> das entspricht </span>
+        <span class="text text--bold text--blue">
+          {(sumWater / LITER_PER_BATHTUB).toLocaleString(undefined, {
+            maximumFractionDigits: 0,
+          })}
+        </span>
+        <span class="text text--bold text--blue">Badewannen</span>
       </div>
-      <div class="logo">
-        <img src="./img/proveg-logo.svg" alt="proveg logo" />
-      </div>
-      <div class="link">berechnet auf proveg.com/de/impact-rechner</div>
+      <div class="dotted-border" />
     </div>
     <div class="banner">
-      <div class="icon">
+      <div class="icon icon--right">
         <img src="./img/icons/forrest.png" alt="forrest icon" />
       </div>
-      <div>
-        <p>
-          <strong class="text text--green text--large">
-            {sumLand.toLocaleString(undefined, {
-              maximumFractionDigits: 0,
-            })}
-          </strong>
-          <span class="text text--green">m<sup>2</sup> Land,</span>
-          <br />das entspricht
-          <strong class="text text--green text--large">
-            {(sumLand / SQUARE_METER_PER_PITCH).toLocaleString(undefined, {
-              maximumFractionDigits: 2,
-            })}
-          </strong>
-          <span class="text text--green">Fußballfeldern</span>
-        </p>
+      <div class="text-box">
+        <span class="text text--bold text--green">
+          {sumLand.toLocaleString(undefined, {
+            maximumFractionDigits: 0,
+          })}
+          m<sup>2</sup>
+        </span>
+        <span class="text"> Land,</span>
+        <br />
+        <span class="text"> das entspricht </span>
+        <span class="text text--bold text--green">
+          {(sumLand / SQUARE_METER_PER_PITCH).toLocaleString(undefined, {
+            maximumFractionDigits: 1,
+          })}
+        </span>
+        <span class="text text--bold text--green">Fußballfeldern</span>
       </div>
-      <div class="logo">
-        <img src="./img/proveg-logo.svg" alt="proveg logo" />
+      <div class="dotted-border" />
+    </div>
+    <div class="banner">
+      <div class="link">
+        Berechnet auf <span class="text--uppercase"
+          >proveg.com/impact-rechner</span
+        >
       </div>
-      <div class="link">berechnet auf proveg.com/de/impact-rechner</div>
     </div>
   </section>
   <section class="spacer" />
@@ -282,15 +288,12 @@
 <style lang="scss">
   main {
     text-align: center;
-    /* padding: 1em; */
     min-width: 258px;
     margin: 0 auto;
     color: #11284a;
   }
 
   h1 {
-    /* text-transform: uppercase; */
-    /* font-size: 4em; */
     font-weight: 500;
   }
 
@@ -331,28 +334,49 @@
     }
   }
 
-  .large-icons {
-    font-size: 3em;
-    margin: 8px 0;
+  .large-icons img {
+    margin-top: 5px;
+    max-height: 40px;
+  }
+
+  .text-box {
+    flex-grow: 1;
+    align-self: center;
+
+    &--first {
+      margin-top: 8px;
+    }
   }
 
   .text {
-    &--large {
-      font-size: 1.75em;
-      font-weight: 500;
+    font-size: 1.4em;
+
+    &--big {
+      font-size: 1.5em;
+    }
+
+    &--small {
+      font-size: 1.1em;
+    }
+
+    &--bold {
+      font-weight: 400;
+    }
+
+    &--uppercase {
       text-transform: uppercase;
     }
 
     &--orange {
-      color: #f39529;
+      color: #ffae2c;
     }
 
     &--blue {
-      color: #73c1e9;
+      color: #5bb7e5;
     }
 
     &--green {
-      color: #3fab33;
+      color: #73c800;
     }
   }
 
@@ -361,25 +385,30 @@
     display: flex;
     text-align: left;
     font-size: 0.85em;
-    letter-spacing: 0.5px;
-    line-height: 1.3;
+    font-weight: 300;
+    line-height: 1.2;
     color: white;
     background-color: #11284a;
-    padding: 8px 12px;
-    margin: 1rem auto;
+    padding: 8px 18px;
+    margin: auto;
     max-width: 500px;
 
     .icon {
       align-self: center;
-      flex: 0 0 80px;
-      margin-right: 12px;
+      flex: 0 0 70px;
+      margin-right: 16px;
+
+      &--right {
+        order: 1;
+        margin-right: 0;
+      }
     }
 
     .logo {
       position: absolute;
-      top: 8px;
-      right: 6px;
-      width: 60px;
+      top: 12px;
+      right: 20px;
+      width: 70px;
     }
 
     img {
@@ -387,11 +416,9 @@
     }
 
     .link {
-      position: absolute;
-      right: 6px;
-      bottom: 6px;
-      font-size: 0.7em;
-      font-style: italic;
+      text-align: right;
+      width: 100%;
+      font-size: 0.75em;
     }
 
     @media (min-width: 640px) {
@@ -402,11 +429,25 @@
       }
 
       .logo {
-        top: 12px;
-        right: 12px;
-        width: 100px;
+        width: 90px;
       }
     }
+  }
+
+  .dotted-border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 1px;
+    background-image: linear-gradient(
+      to right,
+      #606060 0%,
+      #606060 40%,
+      transparent 40%
+    );
+    background-size: 5px 1px;
   }
 
   .inline {
@@ -524,7 +565,7 @@
 
   @media (min-width: 640px) {
     main {
-      max-width: 770px;
+      max-width: 600px;
     }
   }
 </style>
