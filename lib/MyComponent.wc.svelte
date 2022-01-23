@@ -454,10 +454,7 @@
     display: inline;
   }
 
-  input,
-  button,
-  select,
-  textarea {
+  input {
     font-family: inherit;
     font-size: inherit;
     -webkit-padding: 0.4em 0;

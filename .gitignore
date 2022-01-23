@@ -1,4 +1,4 @@
 node_modules/
 /dist/
-/demo/public/build/
+# /demo/public/build/
 .DS_Store
