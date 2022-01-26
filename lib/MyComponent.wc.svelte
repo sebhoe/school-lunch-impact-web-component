@@ -1,6 +1,27 @@
 <svelte:options tag="my-component" />
 
 <script>
+  /**
+   * function for button to download banner as an image
+   *
+   * 2 libraries are used:
+   * dom-to-image: https://github.com/tsayen/dom-to-image
+   * FileSaver.js: https://github.com/eligrey/FileSaver.js
+   */
+  import { domtoimage } from "dom-to-image";
+  import { saveAs } from "file-saver";
+
+  let canvas;
+
+  function downloadBanner() {
+    domtoimage.toBlob(canvas).then(function (blob) {
+      window.saveAs(blob, "banner.png");
+    });
+  }
+
+  /**
+   * Constants
+   */
   const ADULT_NUTRITION = 2000,
     CHILD_NUTRITION = 1800,
     ADULT_TO_CHILD_FAKTOR = CHILD_NUTRITION / ADULT_NUTRITION,
@@ -189,7 +210,7 @@
     </h2>
   </section>
 
-  <section>
+  <section bind:this={canvas}>
     <div class="banner">
       <div class="text-box text-box--first">
         <span class="text text--big text--bold text--uppercase"
@@ -282,7 +303,10 @@
       </div>
     </div>
   </section>
-  <section class="spacer" />
+
+  <button class="download-banner" on:click={downloadBanner}
+    >Banner speichern</button
+  >
 </main>
 
 <style lang="scss">
@@ -454,10 +478,7 @@
     display: inline;
   }
 
-  input,
-  button,
-  select,
-  textarea {
+  input {
     font-family: inherit;
     font-size: inherit;
     -webkit-padding: 0.4em 0;
@@ -558,9 +579,8 @@
     background: #367ebd;
   }
 
-  .spacer {
-    height: 1rem;
-    margin-top: 10rem;
+  .download-banner {
+    margin: 4rem 0;
   }
 
   @media (min-width: 640px) {
