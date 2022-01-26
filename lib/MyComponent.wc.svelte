@@ -8,7 +8,7 @@
    * dom-to-image: https://github.com/tsayen/dom-to-image
    * FileSaver.js: https://github.com/eligrey/FileSaver.js
    */
-  import { domtoimage } from "dom-to-image";
+  import * as domtoimage from "dom-to-image";
   import { saveAs } from "file-saver";
 
   let canvas;
